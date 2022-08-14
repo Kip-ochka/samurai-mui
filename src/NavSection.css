@@ -1,0 +1,15 @@
+.button_wrapper {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  border-radius: 10px;
+  gap: 1em;
+  background-color: transparent;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.button_wrapper:hover {
+  background-color: rgba(253, 29, 29, 1);
+}
