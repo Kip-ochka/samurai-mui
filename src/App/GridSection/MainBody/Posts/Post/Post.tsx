@@ -1,5 +1,6 @@
 import { Avatar, Box, Typography, Button } from '@mui/material'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
+
 export default function Post() {
   return (
     <Box

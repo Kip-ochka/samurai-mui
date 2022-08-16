@@ -1,16 +1,9 @@
 import { Box, Grid, TextField, Button, Typography } from '@mui/material'
-import styled from '@emotion/styled'
+import { PostInputs } from './PostsStyledComponents'
 import Post from './Post/Post'
 import SendIcon from '@mui/icons-material/Send'
-const PostInputs = styled.label`
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #1976d2;
-`
-export default function Posts() {
+
+const Posts = () => {
   return (
     <Box sx={{ pl: 4, pr: 4, display: 'flex', flexDirection: 'column' }}>
       <PostInputs>
@@ -37,3 +30,5 @@ export default function Posts() {
     </Box>
   )
 }
+
+export default Posts

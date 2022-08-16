@@ -1,16 +1,16 @@
-import { Paper, Typography } from '@mui/material'
+import { Paper } from '@mui/material'
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic'
-import PersonIcon from '@mui/icons-material/Person'
 import ForumIcon from '@mui/icons-material/Forum'
 import FeedIcon from '@mui/icons-material/Feed'
+import PersonIcon from '@mui/icons-material/Person'
 import SettingsIcon from '@mui/icons-material/Settings'
-import './NavSection.css'
+import NavButton from './NavButton/NavButton'
 
 export default function NavSection() {
   return (
     <>
       <Paper
-        component="nav"
+        component='nav'
         elevation={6}
         sx={{
           display: 'flex',
@@ -20,39 +20,14 @@ export default function NavSection() {
           minHeight: '85vh',
         }}
       >
-        <div className="buttons_wrapper">
-          <button className="button_wrapper">
-            <PersonIcon />
-            <Typography variant="button" color="initial">
-              Profile
-            </Typography>
-          </button>
-          <button className="button_wrapper">
-            <ForumIcon />
-            <Typography variant="button" color="initial">
-              Messages
-            </Typography>
-          </button>
-          <button className="button_wrapper">
-            <FeedIcon />
-            <Typography variant="button" color="initial">
-              News
-            </Typography>
-          </button>
-          <button className="button_wrapper">
-            <LibraryMusicIcon />
-            <Typography variant="button" color="initial">
-              Music
-            </Typography>
-          </button>
+        <div>
+          <NavButton buttonText='Profile' icon={<PersonIcon />} />
+          <NavButton buttonText='Messages' icon={<ForumIcon />} />
+          <NavButton buttonText='News' icon={<FeedIcon />} />
+          <NavButton buttonText='Music' icon={<LibraryMusicIcon />} />
         </div>
-        <div className="buttons_wrappers">
-          <button className="button_wrapper">
-            <SettingsIcon />
-            <Typography variant="button" color="initial">
-              Setting
-            </Typography>
-          </button>
+        <div>
+          <NavButton buttonText='Settings' icon={<SettingsIcon />} />
         </div>
       </Paper>
     </>
