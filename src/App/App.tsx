@@ -1,6 +1,6 @@
 import Container from '@mui/material/Container'
-import GridSection from './GridSection'
-import Header from './Header'
+import GridSection from './GridSection/GridSection'
+import Header from './Header/Header'
 import CssBaseline from '@mui/material/CssBaseline'
 
 function App() {

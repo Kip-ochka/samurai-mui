@@ -7,14 +7,14 @@ export default function Post() {
         display: 'flex',
         alignItems: 'center',
         gap: 2,
-        pt: 1,
-        pb: 1,
-        pl: 1,
-        border: 1,
+        p: 1,
+        mt: 1,
+        mb: 2,
+        borderBottom: 1,
       }}
     >
       <Avatar />
-      <Typography variant="body1" color="initial">
+      <Typography variant='body1' color='initial'>
         text
       </Typography>
     </Box>

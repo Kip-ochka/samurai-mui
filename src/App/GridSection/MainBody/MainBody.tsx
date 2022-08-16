@@ -1,6 +1,6 @@
 import { Paper } from '@mui/material'
-import Posts from './Posts'
-import UserSection from './UserSection'
+import Posts from './Posts/Posts'
+import UserSection from './UserSection/UserSection'
 
 export default function MainBody() {
   return (

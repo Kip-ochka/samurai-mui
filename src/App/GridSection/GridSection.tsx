@@ -1,6 +1,6 @@
 import Grid from '@mui/material/Grid'
-import NavSection from './NavSection'
-import MainBody from './MainBody'
+import NavSection from './NavSection/NavSection'
+import MainBody from './MainBody/MainBody'
 
 export default function GridSection() {
   return (
@@ -8,7 +8,7 @@ export default function GridSection() {
       container
       spacing={4}
       sx={{ pt: 4, flexGrow: 1, height: '100%' }}
-      className="lox"
+      className='lox'
     >
       <Grid item xs={3} sx={{ height: '100%' }}>
         <NavSection />
