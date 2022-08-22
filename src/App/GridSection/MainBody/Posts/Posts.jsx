@@ -1,5 +1,4 @@
 import { Box, Grid, TextField, Button, Typography } from '@mui/material'
-import { PostInputs } from './PostsStyledComponents'
 import Post from './Post/Post'
 import SendIcon from '@mui/icons-material/Send'
 
@@ -31,11 +30,14 @@ const Posts = () => {
         Send post
       </Button>
       <Grid>
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
+        <Post textContent='I AM BIG TEXT CONTNENT' likeCount={10} />
+        <Post textContent='I AM small text content' likeCount={11} />
+        <Post textContent='I AM JUST TEXT CONTNENT' likeCount={12} />
+        <Post textContent='I AM LOVING THIS TEXT CONTNENT' likeCount={555} />
+        <Post
+          textContent="I AM dont' love this TEXT CONTNENT"
+          likeCount={104684}
+        />
       </Grid>
     </Box>
   )
