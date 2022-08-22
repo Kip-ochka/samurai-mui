@@ -2,6 +2,9 @@ import { Box, Grid, TextField, Button, Typography } from '@mui/material'
 import { PostInputs } from './PostsStyledComponents'
 import Post from './Post/Post'
 import SendIcon from '@mui/icons-material/Send'
+interface PostText {
+  text: string
+}
 
 const Posts = () => {
   return (
