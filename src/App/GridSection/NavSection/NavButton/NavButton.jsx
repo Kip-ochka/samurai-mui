@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 
 //todo type Button prop
-function NavButton(props: any) {
+function NavButton(props) {
   return (
     <Button
       variant='text'
