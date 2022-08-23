@@ -13,7 +13,7 @@ function GridSection() {
             <Grid item xs={3} sx={{height: '100%'}}>
                 <NavSection/>
             </Grid>
-            <Grid item xs={9} sx={{height: '100%'}}>
+            <Grid item xs={9} sx={{height: '100%'}} component='main'>
                 <MainBody/>
             </Grid>
 
