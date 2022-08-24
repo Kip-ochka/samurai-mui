@@ -4,10 +4,11 @@ import ForumIcon from '@mui/icons-material/Forum'
 import FeedIcon from '@mui/icons-material/Feed'
 import PersonIcon from '@mui/icons-material/Person'
 import SettingsIcon from '@mui/icons-material/Settings'
-import NavLink from './NavButton/NavLink'
-import {Routes, Route, Link} from "react-router-dom";
+import MyNavLink from './MyNavLink/MyNavLink'
+import {NavLink} from "react-router-dom";
 
 export default function NavSection() {
+
     return (
         <>
             <Paper
@@ -22,20 +23,29 @@ export default function NavSection() {
                 }}
             >
                 <div>
-                    <Link to='/' style={{textDecoration: 'none'}}><NavLink href="/profile" buttonText='Profile'
-                                                                           icon={<PersonIcon/>}/></Link>
-                    <Link to='/dialogs' style={{textDecoration: 'none'}}><NavLink buttonText='Messages'
-                                                                                  icon={<ForumIcon/>}/></Link>
-                    <Link to='news' style={{textDecoration: 'none'}}><NavLink buttonText='News'
-                                                                              icon={<FeedIcon/>}/></Link>
-                    <Link to='music' style={{textDecoration: 'none'}}><NavLink buttonText='Music'
-                                                                               icon={<LibraryMusicIcon/>}/></Link>
+                    <NavLink to='/profile' style={({isActive}) =>
+                        isActive ? undefined : {textDecoration: 'none'}
+                    }><MyNavLink icon={<PersonIcon sx={{height:'30px', width:'30px'}}/>}
+                                 buttonText='Profile'/></NavLink>
+                    <NavLink to='/dialogs' style={({isActive}) =>
+                        isActive ? undefined : {textDecoration: 'none'}
+                    }><MyNavLink icon={<ForumIcon sx={{height:'30px', width:'30px'}}/>}
+                                 buttonText='Messages'/></NavLink>
+                    <NavLink to='/news' style={({isActive}) =>
+                        isActive ? undefined : {textDecoration: 'none'}
+                    }><MyNavLink icon={<FeedIcon sx={{height:'30px', width:'30px'}}/>}
+                                 buttonText='News'/></NavLink>
+                    <NavLink to='/music' style={({isActive}) =>
+                        isActive ? undefined : {textDecoration: 'none'}
+                    }><MyNavLink icon={<LibraryMusicIcon sx={{height:'30px', width:'30px'}}/>}
+                                 buttonText='Music'/></NavLink>
                 </div>
                 <div>
-                    <Link to='settings' style={{textDecoration: 'none'}}><NavLink buttonText='Settings'
-                                                                                  icon={<SettingsIcon/>}/></Link>
+                    <NavLink to='/settings' style={({isActive}) =>
+                        isActive ? undefined : {textDecoration: 'none'}
+                    }><MyNavLink icon={<SettingsIcon sx={{height:'30px', width:'30px'}}/>}
+                                 buttonText='Settings'/></NavLink>
                 </div>
-
             </Paper>
         </>
     )

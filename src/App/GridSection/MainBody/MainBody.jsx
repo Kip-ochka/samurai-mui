@@ -10,7 +10,7 @@ export default function MainBody() {
     return (
         <Paper sx={{minHeight: '85vh'}}>
             <Routes>
-                <Route path="/" element={<UserSection/>}/>
+                <Route path="/profile" element={<UserSection/>}/>
                 <Route path="/dialogs" element={<Dialogs/>}/>
                 <Route path="/news" element={<News/>}/>
                 <Route path="/music" element={<Music/>}/>
