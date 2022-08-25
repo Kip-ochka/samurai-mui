@@ -2,7 +2,8 @@ import { Box, Grid, TextField, Button, Typography } from '@mui/material'
 import Post from './Post/Post'
 import SendIcon from '@mui/icons-material/Send'
 
-const Posts = () => {
+const Posts = ({posts}) => {
+
   return (
     <Box sx={{ pl: 4, pr: 4, display: 'flex', flexDirection: 'column' }}>
       <Box
@@ -12,7 +13,7 @@ const Posts = () => {
           flexDirection: 'column',
           gap: 1,
           fontSize: '18px',
-          fontSeight: 'bold',
+          fontWeight: 'bold',
           color: '#1976d2',
         }}
       >
@@ -30,14 +31,9 @@ const Posts = () => {
         Send post
       </Button>
       <Grid>
-        <Post textContent='I AM BIG TEXT CONTNENT' likeCount={10} />
-        <Post textContent='I AM small text content' likeCount={11} />
-        <Post textContent='I AM JUST TEXT CONTNENT' likeCount={12} />
-        <Post textContent='I AM LOVING THIS TEXT CONTNENT' likeCount={555} />
-        <Post
-          textContent="I AM dont' love this TEXT CONTNENT"
-          likeCount={104684}
-        />
+          {posts.map(data=>{
+             return <Post key={data.id} textContent={data.message} likeCount={data.likeCount}/>
+          })}
       </Grid>
     </Box>
   )

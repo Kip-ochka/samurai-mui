@@ -1,6 +1,7 @@
 import { Avatar, Box, Typography } from '@mui/material'
 import styled from '@emotion/styled'
 
+
 const BackgroundProfileImage = styled.img`
   width: 100%;
   height: 130px;

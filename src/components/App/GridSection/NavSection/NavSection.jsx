@@ -1,4 +1,4 @@
-import {Paper} from '@mui/material'
+import { Box, Paper} from '@mui/material'
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic'
 import ForumIcon from '@mui/icons-material/Forum'
 import FeedIcon from '@mui/icons-material/Feed'
@@ -6,9 +6,9 @@ import PersonIcon from '@mui/icons-material/Person'
 import SettingsIcon from '@mui/icons-material/Settings'
 import MyNavLink from './MyNavLink/MyNavLink'
 import {NavLink} from "react-router-dom";
+import FriendSquare from "./FriendSquare";
 
-export default function NavSection() {
-
+export default function NavSection({friendsData}) {
     return (
         <>
             <Paper
@@ -23,7 +23,7 @@ export default function NavSection() {
                 }}
             >
                 <div>
-                    <NavLink to='/profile' style={({isActive}) =>
+                    <NavLink to='/' style={({isActive}) =>
                         isActive ? undefined : {textDecoration: 'none'}
                     }><MyNavLink icon={<PersonIcon sx={{height:'30px', width:'30px'}}/>}
                                  buttonText='Profile'/></NavLink>
@@ -40,6 +40,11 @@ export default function NavSection() {
                     }><MyNavLink icon={<LibraryMusicIcon sx={{height:'30px', width:'30px'}}/>}
                                  buttonText='Music'/></NavLink>
                 </div>
+                <Box sx={{display:'flex', flexDirection:'column', alignItems:'start', gap:1, p:2}}>
+                    {friendsData.friends.map(item=>{
+                        return <FriendSquare key={item.id} name={item.name} avatar={item.avatarLink}/>
+                    })}
+                </Box>
                 <div>
                     <NavLink to='/settings' style={({isActive}) =>
                         isActive ? undefined : {textDecoration: 'none'}
