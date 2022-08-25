@@ -1,10 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import l from './Dialogs.module.css'
 import Dialog from "./Dialog/Dialog";
 import Messages from "./Messages/Messages";
+import {Box, Button, TextField} from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
 
 
 const Dialogs = ({dialogsData}) => {
+    const [textAreaValue, setTextAreaValue] = useState('')
+    const handleInputChange = evt => {
+        setTextAreaValue(evt.target.value)
+    }
     return (
         <div className={l.dialogs}>
             <div>
@@ -12,11 +18,23 @@ const Dialogs = ({dialogsData}) => {
                     return <Dialog key={dialog.id} id={dialog.id} name={dialog.name}/>
                 })}
             </div>
-            <div className={l.messages}>
+            <Box sx={{width: '100%', display: 'flex', flexDirection: 'column'}} className={l.messages}>
                 {dialogsData.messages.map(message => {
                     return <Messages key={message.id} message={message.message}/>
                 })}
-            </div>
+                <TextField id="outlined-basic" label="SendMessage" variant="outlined" sx={{width: '100%'}}
+                           value={textAreaValue} onChange={handleInputChange}/>
+                <Button
+                    onClick={() => {
+                        alert(textAreaValue)
+                    }}
+                    variant='contained'
+                    color='primary'
+                    endIcon={<SendIcon/>}
+                    sx={{width: '200px', alignSelf: 'end', mt: 1, mb: 1}}
+                >Send message</Button>
+
+            </Box>
         </div>
     )
 

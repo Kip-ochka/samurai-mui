@@ -2,7 +2,7 @@ import Grid from '@mui/material/Grid'
 import NavSection from './NavSection/NavSection'
 import MainBody from './MainBody/MainBody'
 
-function GridSection({friendsData, profile,messages}) {
+function GridSection({friendsData, profile,messages, addPost}) {
     return (
         <Grid
             container
@@ -14,7 +14,7 @@ function GridSection({friendsData, profile,messages}) {
                 <NavSection friendsData={friendsData}/>
             </Grid>
             <Grid item xs={9} sx={{height: '100%'}} component='main'>
-                <MainBody profilePage={profile} messagePage={messages}/>
+                <MainBody profilePage={profile} messagePage={messages} addPost={addPost}/>
             </Grid>
 
         </Grid>

@@ -2,11 +2,11 @@ import React from 'react';
 import UserSection from "./UserSection/UserSection";
 import Posts from "./Posts/Posts";
 
-const Profile = (props) => {
+const Profile = ({postsList, addPost}) => {
     return (
         <div>
             <UserSection/>
-            <Posts posts={props}/>
+            <Posts postsList={postsList} addPost={addPost}/>
         </div>
 
 

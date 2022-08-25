@@ -2,6 +2,7 @@ import Container from '@mui/material/Container'
 import GridSection from './GridSection/GridSection'
 import Header from './Header/Header'
 import CssBaseline from '@mui/material/CssBaseline'
+import {addPost} from "../../redux/state";
 
 function App({state}) {
   return (
@@ -13,7 +14,7 @@ function App({state}) {
     >
       <CssBaseline />
       <Header />
-      <GridSection friendsData={state.sidebar} profile={state.profilePage} messages={state.messagePage}/>
+      <GridSection friendsData={state.sidebar} profile={state.profilePage} messages={state.messagePage} addPost={addPost}/>
     </Container>
   )
 }
