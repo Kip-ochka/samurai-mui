@@ -27,7 +27,10 @@ const Posts = ({postsList, addPost}) => {
                 <TextField id='filled-basic' label='your news...' value={textAreaValue} onChange={handleInput}/>
             </Box>
             <Button
-                onClick={addPost(textAreaValue)}
+                onClick={()=>{
+                    addPost(textAreaValue)
+                    setTextAreaValue('')
+                }}
                 variant='contained'
                 color='primary'
                 endIcon={<SendIcon/>}
