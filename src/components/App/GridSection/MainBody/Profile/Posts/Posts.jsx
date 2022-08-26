@@ -1,13 +1,22 @@
-import React, {useState} from "react";
-import {Box, Grid, TextField, Button, Typography} from '@mui/material'
+import React from "react";
+import {Box, Grid, Button, Typography} from '@mui/material'
 import Post from './Post/Post'
 import SendIcon from '@mui/icons-material/Send'
 
-const Posts = ({postsList, addPost}) => {
-    const [textAreaValue, setTextAreaValue] = useState('')
-    const handleInput = evt => {
-        setTextAreaValue(evt.target.value)
+const Posts = ({postsList, addPost, updatePostText}) => {
+
+    const newPostElement = React.createRef()
+
+    const addPosts = () => {
+        let text = newPostElement.current.value
+        addPost(text)
+
     }
+    const onPostChange = () => {
+        let text = newPostElement.current.value
+        updatePostText(text)
+    }
+
     return (
         <Box sx={{pl: 4, pr: 4, display: 'flex', flexDirection: 'column'}}>
             <Box
@@ -24,13 +33,11 @@ const Posts = ({postsList, addPost}) => {
                 <Typography variant='subtitle1' color='primary' sx={{pb: 1}}>
                     My posts
                 </Typography>
-                <TextField id='filled-basic' label='your news...' value={textAreaValue} onChange={handleInput}/>
+                <textarea ref={newPostElement} value={postsList.newPostText} onChange={onPostChange}/>
+                {/*<TextField id='filled-basic' label='your news...' value={postsList.newPostText} onChange={handleInput}/>*/}
             </Box>
             <Button
-                onClick={()=>{
-                    addPost(textAreaValue)
-                    setTextAreaValue('')
-                }}
+                onClick={addPosts}
                 variant='contained'
                 color='primary'
                 endIcon={<SendIcon/>}

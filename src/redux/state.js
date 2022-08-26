@@ -1,4 +1,6 @@
-import rerenderTree from "../renderer";
+let rerenderTree = () => {
+    console.log('state has been changed')
+}
 
 let state = {
     profilePage: {
@@ -11,7 +13,7 @@ let state = {
             {id: 6, message: 'message6', likeCount: 1234},
             {id: 7, message: 'message7', likeCount: 12345},
             {id: 8, message: 'message8', likeCount: 123456},
-        ]
+        ], newPostText:'hi'
     },
     messagePage: {
         dialogs: [
@@ -23,7 +25,7 @@ let state = {
             {id: 6, name: 'Ekaterina'},
             {id: 7, name: 'Igor'},
             {id: 8, name: 'rus'},
-            {id: 9, name: 'Kseniaz'}
+            {id: 9, name: 'Ksenia'}
         ],
         messages: [
             {id: 1, message: 'hi'},
@@ -59,13 +61,22 @@ let state = {
     },
 }
 
-export const addPost = (postMessage) => {
+export const addPost = () => {
     const newPost = {
         id:99,
-        message:postMessage,
+        message:state.profilePage.newPostText,
         likeCount:0
     }
-    state.profilePage.posts.push(newPost)
+    state.profilePage.posts.unshift(newPost)
+    state.profilePage.newPostText=''
     rerenderTree(state)
+}
+
+export const updatePostText = (postText) => {
+    state.profilePage.newPostText = postText
+    rerenderTree(state)
+}
+export const subscribe = (observe) => {
+    rerenderTree = observe
 }
     export default state

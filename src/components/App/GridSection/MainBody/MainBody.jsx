@@ -7,11 +7,12 @@ import Music from "./Music/Music";
 import Settings from "./Settings/Settings";
 import Profile from "./Profile/Profile";
 
-export default function MainBody({profilePage, messagePage, addPost}) {
+export default function MainBody({profilePage, messagePage, addPost, updatePostText}) {
     return (
         <Paper sx={{minHeight: '85vh'}}>
             <Routes>
-                <Route path="/" element={<Profile postsList={profilePage} addPost={addPost}/>}/>
+                <Route path="/"
+                       element={<Profile postsList={profilePage} addPost={addPost} updatePostText={updatePostText}/>}/>
                 <Route path="/dialogs/*"
                        element={<Dialogs dialogsData={messagePage}/>}/>
                 <Route path="/news" element={<News/>}/>
