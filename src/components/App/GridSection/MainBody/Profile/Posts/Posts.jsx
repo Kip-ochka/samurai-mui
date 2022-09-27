@@ -4,7 +4,6 @@ import Post from './Post/Post'
 import SendIcon from '@mui/icons-material/Send'
 
 const Posts = ({postsList, addPost, updatePostText}) => {
-
     const newPostElement = React.createRef()
 
     const addPosts = () => {
@@ -20,7 +19,7 @@ const Posts = ({postsList, addPost, updatePostText}) => {
     return (
         <Box sx={{pl: 4, pr: 4, display: 'flex', flexDirection: 'column'}}>
             <Box
-                component='label'
+                component='form'
                 sx={{
                     display: 'flex',
                     flexDirection: 'column',
@@ -30,10 +29,10 @@ const Posts = ({postsList, addPost, updatePostText}) => {
                     color: '#1976d2',
                 }}
             >
-                <Typography variant='subtitle1' color='primary' sx={{pb: 1}}>
+                <Typography variant='subtitle1' color='primary' sx={{display:'flex',flexDirection:'column'}} component='label'>
                     My posts
+                    <textarea ref={newPostElement} value={postsList.newPostText} onChange={onPostChange} style={{resize: 'none', padding:'8px'}}/>
                 </Typography>
-                <textarea ref={newPostElement} value={postsList.newPostText} onChange={onPostChange}/>
                 {/*<TextField id='filled-basic' label='your news...' value={postsList.newPostText} onChange={handleInput}/>*/}
             </Box>
             <Button
@@ -45,7 +44,7 @@ const Posts = ({postsList, addPost, updatePostText}) => {
             >
                 Send post
             </Button>
-            <Grid>
+            <Grid sx={{maxHeight:'28vh', overflow:'auto'}}>
                 {postsList.posts.map(data => {
                     return <Post key={data.id} textContent={data.message} likeCount={data.likeCount}/>
                 })}

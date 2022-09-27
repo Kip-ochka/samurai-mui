@@ -8,7 +8,7 @@ function GridSection({friendsData, profile, messages, addPost, updatePostText}) 
             container
             spacing={4}
             sx={{pt: 4, flexGrow: 1, height: '100%'}}
-            className='lox'
+
         >
             <Grid item xs={3} sx={{height: '100%'}}>
                 <NavSection friendsData={friendsData}/>
