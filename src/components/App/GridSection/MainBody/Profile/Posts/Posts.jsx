@@ -2,18 +2,19 @@ import React from "react";
 import {Box, Grid, Button, Typography} from '@mui/material'
 import Post from './Post/Post'
 import SendIcon from '@mui/icons-material/Send'
+import {addPostActionCreator, updateNewPostTextCreator} from "../../../../../../redux/state";
 
-const Posts = ({postsList, addPost, updatePostText}) => {
+const Posts = ({postsList, dispatch}) => {
     const newPostElement = React.createRef()
 
     const addPosts = () => {
         let text = newPostElement.current.value
-        addPost(text)
+        dispatch(addPostActionCreator())
 
     }
     const onPostChange = () => {
         let text = newPostElement.current.value
-        updatePostText(text)
+        dispatch(updateNewPostTextCreator (text))
     }
 
     return (
@@ -29,9 +30,11 @@ const Posts = ({postsList, addPost, updatePostText}) => {
                     color: '#1976d2',
                 }}
             >
-                <Typography variant='subtitle1' color='primary' sx={{display:'flex',flexDirection:'column'}} component='label'>
+                <Typography variant='subtitle1' color='primary' sx={{display: 'flex', flexDirection: 'column'}}
+                            component='label'>
                     My posts
-                    <textarea ref={newPostElement} value={postsList.newPostText} onChange={onPostChange} style={{resize: 'none', padding:'8px'}}/>
+                    <textarea ref={newPostElement} value={postsList.newPostText} onChange={onPostChange}
+                              style={{resize: 'none', padding: '8px'}}/>
                 </Typography>
                 {/*<TextField id='filled-basic' label='your news...' value={postsList.newPostText} onChange={handleInput}/>*/}
             </Box>
@@ -44,7 +47,7 @@ const Posts = ({postsList, addPost, updatePostText}) => {
             >
                 Send post
             </Button>
-            <Grid sx={{maxHeight:'28vh', overflow:'auto'}}>
+            <Grid sx={{maxHeight: '28vh', overflow: 'auto'}}>
                 {postsList.posts.map(data => {
                     return <Post key={data.id} textContent={data.message} likeCount={data.likeCount}/>
                 })}

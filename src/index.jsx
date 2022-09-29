@@ -1,5 +1,5 @@
 import './index.css'
-import store from './redux/state.js'
+import {store} from './redux/state.js'
 import ReactDOM from 'react-dom/client'
 import {BrowserRouter} from "react-router-dom";
 import './index.css'
@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 const rerenderTree = (state) => {
     root.render(
         <BrowserRouter>
-            <App state={state} addPost={store.addPost.bind(store)} updatePostText={store.updatePostText.bind(store)}/>
+            <App state={state} dispatch={store.dispatch.bind(store)}/>
         </BrowserRouter>)
 }
 rerenderTree(store.getState())

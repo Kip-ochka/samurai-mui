@@ -3,7 +3,7 @@ import GridSection from './GridSection/GridSection'
 import Header from './Header/Header'
 import CssBaseline from '@mui/material/CssBaseline'
 
-function App({state, updatePostText, addPost}) {
+function App({state, dispatch}) {
     return (
         <Container
             sx={{
@@ -13,8 +13,8 @@ function App({state, updatePostText, addPost}) {
         >
             <CssBaseline/>
             <Header/>
-            <GridSection updatePostText={updatePostText} friendsData={state.sidebar}
-                         profile={state.profilePage} messages={state.messagePage} addPost={addPost}/>
+            <GridSection dispatch={dispatch} friendsData={state.sidebar}
+                         profile={state.profilePage} messages={state.messagePage}/>
         </Container>
     )
 }
