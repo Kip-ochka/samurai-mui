@@ -1,32 +1,37 @@
-import React, {useState} from "react";
-import l from './Dialogs.module.css'
+import style from './Dialogs.module.css'
 import Dialog from "./Dialog/Dialog";
 import Messages from "./Messages/Messages";
 import {Box, Button, TextField} from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
+import {sendMessageCreator, updateNewMessageTextCreator} from "../../../../../redux/dialogPageReducer";
 
 
-const Dialogs = ({dialogsData}) => {
-    const [textAreaValue, setTextAreaValue] = useState('')
-    const handleInputChange = evt => {
-        setTextAreaValue(evt.target.value)
+const Dialogs = ({dialogsData, dispatch}) => {
+    const newMessageText = dialogsData.newDialogText
+    const onMessageClick = () => {
+        dispatch(sendMessageCreator())
     }
+    const onNewMessageChange = (evt) => {
+        const messageText = evt.target.value
+        dispatch(updateNewMessageTextCreator(messageText))
+    }
+
     return (
-        <div className={l.dialogs}>
+        <div className={style.dialogs}>
             <div>
                 {dialogsData.dialogs.map((dialog) => {
                     return <Dialog key={dialog.id} id={dialog.id} name={dialog.name}/>
                 })}
             </div>
-            <Box sx={{width: '100%', display: 'flex', flexDirection: 'column'}} className={l.messages}>
+            <Box sx={{width: '100%', display: 'flex', flexDirection: 'column'}} className={style.messages}>
                 {dialogsData.messages.map(message => {
                     return <Messages key={message.id} message={message.message}/>
                 })}
                 <TextField id="outlined-basic" label="SendMessage" variant="outlined" sx={{width: '100%'}}
-                           value={textAreaValue} onChange={handleInputChange}/>
+                           value={newMessageText} onChange={onNewMessageChange} placeholder='Enter your message'/>
                 <Button
                     onClick={() => {
-                        alert(textAreaValue)
+                        onMessageClick()
                     }}
                     variant='contained'
                     color='primary'

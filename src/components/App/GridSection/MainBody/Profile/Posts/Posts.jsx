@@ -2,13 +2,12 @@ import React from "react";
 import {Box, Grid, Button, Typography} from '@mui/material'
 import Post from './Post/Post'
 import SendIcon from '@mui/icons-material/Send'
-import {addPostActionCreator, updateNewPostTextCreator} from "../../../../../../redux/state";
+import {addPostActionCreator, updateNewPostTextCreator} from "../../../../../../redux/profilePageReducer";
 
 const Posts = ({postsList, dispatch}) => {
     const newPostElement = React.createRef()
 
     const addPosts = () => {
-        let text = newPostElement.current.value
         dispatch(addPostActionCreator())
 
     }

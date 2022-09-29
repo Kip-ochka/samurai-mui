@@ -14,7 +14,7 @@ export default function MainBody({profilePage, messagePage, dispatch}) {
                 <Route path="/"
                        element={<Profile postsList={profilePage} dispatch={dispatch}/>}/>
                 <Route path="/dialogs/*"
-                       element={<Dialogs dialogsData={messagePage}/>}/>
+                       element={<Dialogs dialogsData={messagePage} dispatch={dispatch}/>}/>
                 <Route path="/news" element={<News/>}/>
                 <Route path="/music" element={<Music/>}/>
                 <Route path="/settings" element={<Settings/>}/>
