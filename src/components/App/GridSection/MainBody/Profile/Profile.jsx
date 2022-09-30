@@ -1,12 +1,13 @@
 import React from 'react';
 import UserSection from "./UserSection/UserSection";
-import Posts from "./Posts/Posts";
+import PostsContainer from "./Posts/PostsContainer";
+
 
 const Profile = ({postsList, dispatch}) => {
     return (
         <div>
             <UserSection/>
-            <Posts postsList={postsList} dispatch={dispatch}/>
+            <PostsContainer postsList={postsList} dispatch={dispatch}/>
         </div>
 
 

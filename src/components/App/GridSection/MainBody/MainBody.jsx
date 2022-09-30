@@ -1,11 +1,10 @@
 import {Paper} from '@mui/material'
 import {Route, Routes} from "react-router-dom";
-import Dialogs from "./Dialogs/Dialogs";
-
 import News from "./News/News";
 import Music from "./Music/Music";
 import Settings from "./Settings/Settings";
 import Profile from "./Profile/Profile";
+import DialogsContainer from "./Dialogs/DialogsContainer";
 
 export default function MainBody({profilePage, messagePage, dispatch}) {
     return (
@@ -14,7 +13,7 @@ export default function MainBody({profilePage, messagePage, dispatch}) {
                 <Route path="/"
                        element={<Profile postsList={profilePage} dispatch={dispatch}/>}/>
                 <Route path="/dialogs/*"
-                       element={<Dialogs dialogsData={messagePage} dispatch={dispatch}/>}/>
+                       element={<DialogsContainer dialogsData={messagePage} dispatch={dispatch}/>}/>
                 <Route path="/news" element={<News/>}/>
                 <Route path="/music" element={<Music/>}/>
                 <Route path="/settings" element={<Settings/>}/>

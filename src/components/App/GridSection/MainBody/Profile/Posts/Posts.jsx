@@ -2,18 +2,16 @@ import React from "react";
 import {Box, Grid, Button, Typography} from '@mui/material'
 import Post from './Post/Post'
 import SendIcon from '@mui/icons-material/Send'
-import {addPostActionCreator, updateNewPostTextCreator} from "../../../../../../redux/profilePageReducer";
 
-const Posts = ({postsList, dispatch}) => {
+const Posts = ({postsList, updateNewPostText, addPosts}) => {
     const newPostElement = React.createRef()
 
-    const addPosts = () => {
-        dispatch(addPostActionCreator())
-
+    const onAddPost = () => {
+        addPosts()
     }
     const onPostChange = () => {
         let text = newPostElement.current.value
-        dispatch(updateNewPostTextCreator (text))
+        updateNewPostText (text)
     }
 
     return (
@@ -38,7 +36,7 @@ const Posts = ({postsList, dispatch}) => {
                 {/*<TextField id='filled-basic' label='your news...' value={postsList.newPostText} onChange={handleInput}/>*/}
             </Box>
             <Button
-                onClick={addPosts}
+                onClick={onAddPost}
                 variant='contained'
                 color='primary'
                 endIcon={<SendIcon/>}

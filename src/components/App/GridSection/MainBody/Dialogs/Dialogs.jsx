@@ -3,17 +3,14 @@ import Dialog from "./Dialog/Dialog";
 import Messages from "./Messages/Messages";
 import {Box, Button, TextField} from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
-import {sendMessageCreator, updateNewMessageTextCreator} from "../../../../../redux/dialogPageReducer";
 
-
-const Dialogs = ({dialogsData, dispatch}) => {
+const Dialogs = ({dialogsData, onMessageClick, onNewMessageChange}) => {
     const newMessageText = dialogsData.newDialogText
-    const onMessageClick = () => {
-        dispatch(sendMessageCreator())
+    const onButtonMessageClick = () => {
+        onMessageClick()
     }
-    const onNewMessageChange = (evt) => {
-        const messageText = evt.target.value
-        dispatch(updateNewMessageTextCreator(messageText))
+    const onMessageChange = (evt) => {
+        onNewMessageChange(evt)
     }
 
     return (
@@ -28,11 +25,9 @@ const Dialogs = ({dialogsData, dispatch}) => {
                     return <Messages key={message.id} message={message.message}/>
                 })}
                 <TextField id="outlined-basic" label="SendMessage" variant="outlined" sx={{width: '100%'}}
-                           value={newMessageText} onChange={onNewMessageChange} placeholder='Enter your message'/>
+                           value={newMessageText} onChange={onMessageChange} placeholder='Enter your message'/>
                 <Button
-                    onClick={() => {
-                        onMessageClick()
-                    }}
+                    onClick={onButtonMessageClick}
                     variant='contained'
                     color='primary'
                     endIcon={<SendIcon/>}
