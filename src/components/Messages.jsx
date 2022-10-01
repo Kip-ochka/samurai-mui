@@ -1,4 +1,4 @@
-import l from "../Dialogs.module.css";
+import l from "./Dialogs.module.css";
 import React from "react";
 
 const Messages = ({id, message}) => {

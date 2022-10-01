@@ -1,4 +1,4 @@
-import {sendMessageCreator, updateNewMessageTextCreator} from "../../../../../redux/dialogPageReducer";
+import {sendMessageCreator, updateNewMessageTextCreator} from "../redux/dialogPageReducer";
 import Dialogs from "./Dialogs";
 
 const DialogsContainer = ({dialogsData, dispatch}) => {

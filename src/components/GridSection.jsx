@@ -1,6 +1,6 @@
 import Grid from '@mui/material/Grid'
-import NavSection from './NavSection/NavSection'
-import MainBody from './MainBody/MainBody'
+import NavSection from './NavSection'
+import MainBody from './MainBody'
 
 function GridSection({friendsData, profile, messages, dispatch}) {
     return (

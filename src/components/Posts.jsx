@@ -1,6 +1,6 @@
 import React from "react";
 import {Box, Grid, Button, Typography} from '@mui/material'
-import Post from './Post/Post'
+import Post from './Post'
 import SendIcon from '@mui/icons-material/Send'
 
 const Posts = ({postsList, updateNewPostText, addPosts}) => {

@@ -1,10 +1,10 @@
 import {Paper} from '@mui/material'
 import {Route, Routes} from "react-router-dom";
-import News from "./News/News";
-import Music from "./Music/Music";
-import Settings from "./Settings/Settings";
-import Profile from "./Profile/Profile";
-import DialogsContainer from "./Dialogs/DialogsContainer";
+import News from "./News";
+import Music from "./Music";
+import Settings from "./Settings";
+import Profile from "./Profile";
+import DialogsContainer from "./DialogsContainer";
 
 export default function MainBody({profilePage, messagePage, dispatch}) {
     return (

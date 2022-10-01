@@ -4,7 +4,7 @@ import ForumIcon from '@mui/icons-material/Forum'
 import FeedIcon from '@mui/icons-material/Feed'
 import PersonIcon from '@mui/icons-material/Person'
 import SettingsIcon from '@mui/icons-material/Settings'
-import MyNavLink from './MyNavLink/MyNavLink'
+import MyNavLink from './MyNavLink'
 import {NavLink} from "react-router-dom";
 import FriendSquare from "./FriendSquare";
 
