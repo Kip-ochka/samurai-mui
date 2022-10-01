@@ -80,8 +80,5 @@ const store = {
     }
 }
 
-
-
-
 export {store}
 window.store = store

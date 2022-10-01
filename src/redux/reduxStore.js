@@ -9,6 +9,4 @@ const reducers = combineReducers({
     sidebar: sidebarReducer
 })
 
-const store = createStore(reducers)
-
-export default store
+export const store = createStore(reducers)

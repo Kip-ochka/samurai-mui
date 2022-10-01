@@ -6,7 +6,7 @@ import Settings from "./Settings";
 import Profile from "./Profile";
 import DialogsContainer from "./Dialogs/DialogsContainer";
 
-export default function MainBody({profilePage, messagePage, dispatch}) {
+export default function Body({profilePage, messagePage, dispatch}) {
     return (
         <Paper sx={{height: '85vh'}}>
             <Routes>

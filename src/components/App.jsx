@@ -1,9 +1,9 @@
 import Container from '@mui/material/Container'
-import GridSection from './GridSection'
+import MainSection from './MainSection'
 import Header from './Header'
 import CssBaseline from '@mui/material/CssBaseline'
 
-function App({state, dispatch}) {
+function App() {
     return (
         <Container
             sx={{
@@ -13,8 +13,7 @@ function App({state, dispatch}) {
         >
             <CssBaseline/>
             <Header/>
-            <GridSection dispatch={dispatch} friendsData={state.sidebar}
-                         profile={state.profilePage} messages={state.messagePage}/>
+            <MainSection/>
         </Container>
     )
 }
