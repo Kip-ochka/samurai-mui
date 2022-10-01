@@ -4,7 +4,7 @@ import News from "./News";
 import Music from "./Music";
 import Settings from "./Settings";
 import Profile from "./Profile";
-import DialogsContainer from "./DialogsContainer";
+import DialogsContainer from "./Dialogs/DialogsContainer";
 
 export default function MainBody({profilePage, messagePage, dispatch}) {
     return (

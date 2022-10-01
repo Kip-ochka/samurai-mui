@@ -1,4 +1,4 @@
-import l from "./Dialogs.module.css";
+import l from "./Dialogs/Dialogs.module.css";
 import {Avatar} from "@mui/material";
 import {NavLink} from "react-router-dom";
 import React from "react";

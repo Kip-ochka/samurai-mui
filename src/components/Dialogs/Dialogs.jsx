@@ -1,6 +1,6 @@
 import style from './Dialogs.module.css'
-import Dialog from "./Dialog";
-import Messages from "./Messages";
+import Dialog from "../Dialog";
+import Messages from "../Messages";
 import {Box, Button, TextField} from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 

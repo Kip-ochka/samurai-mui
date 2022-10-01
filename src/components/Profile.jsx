@@ -1,6 +1,6 @@
 import React from 'react';
 import UserSection from "./UserSection";
-import PostsContainer from "./PostsContainer";
+import PostsContainer from "./Posts/PostsContainer";
 
 
 const Profile = ({postsList, dispatch}) => {
